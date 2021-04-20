@@ -114,7 +114,7 @@ void Worker::solve(int & lp_status, BendersOptions const& options) {
 		buffer<< ".mps";
 		LOG(INFO) << "lp_status is : " << ORT_LP_STATUS[lp_status] << std::endl;
 		LOG(INFO) << "written in " << buffer.str() << std::endl;
-		ORTwritemps(*_solver, buffer.str());
+		ORTwriteMpsPreciseWithCoin(*_solver, buffer.str());
 		std::exit(1);
 	}
 	else {//@NOTE conformity : replace with equivalent to XPRS_LP_UNSTARTED but useless
